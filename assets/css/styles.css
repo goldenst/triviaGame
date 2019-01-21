@@ -10,3 +10,7 @@ body {
   padding: 20px 0 ;
 }
 
+.question-area {
+display: none;
+}
+

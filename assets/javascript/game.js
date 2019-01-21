@@ -3,11 +3,17 @@
 var correct = 0;
 
 $(document).ready(function () {
+showrules()
+
+  function showrules () {
+
+    $('.gameRules').html(`<h2>Game Rules</h2> <p>You have 45 Seconds to answer 10 Questions about the 90's Movie Trivia
+     <p> Press the Start Button to begin</p>`)
+    
+  }
 
   $('#title').html("<h1>90's Movie Trivial Trivia</h1>");
   $('#startGame').on('click', start);
-
-  //  TODO show questions 
 
 // ###################  Timmer ######################
 //  Variable that will hold our setInterval that runs the stopwatch
@@ -23,6 +29,8 @@ function start() {
   if (!clockRunning) {
     intervalId = setInterval(count, 1000);
     clockRunning = true;
+    $(".question-area").css("display", "block");
+    $('.gameRules').css("display", "none");
   } 
 }
 
@@ -31,9 +39,7 @@ function stop() {
   // DONE: Use clearInterval to stop the count here and set the clock to not be running.
   clearInterval(intervalId);
   clockRunning = false; 
-  time = 45;
-
-  // TODO hide Questions
+  time = 5;
 }
 
 function count() {
@@ -70,10 +76,10 @@ function timeConverter(t) {
 
   return minutes + ":" + seconds;
 }
+ //  hide Questions and show score
   function endGame () {
   $('#questions').html(`<h2>Congratulations you Got ${correct} Answers Correct!</h2>` );
   }
-
 
   //// ########################## game logic ###############################
 
@@ -163,9 +169,5 @@ function timeConverter(t) {
 
 
 // TODOs #########################
+  
 
-// hide questions on game load
-// show game rules on game load
-// show questions when start button clicked
-// hide questions when timmer stops 
-//display score whwn timmer stops
