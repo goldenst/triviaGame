@@ -1,5 +1,12 @@
 body {
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: lightgray;
+  padding: 0 120px;
+}
+
+.game {
+  background-color: aliceblue;
+  padding: 20px 0 ;
 }
 
